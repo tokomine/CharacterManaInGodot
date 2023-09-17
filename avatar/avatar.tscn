@@ -37,14 +37,30 @@ func _init_all_texture():
 	avatar_texture_dict = {}
 	for category in avatar_category_dict.values():
 		for body in category.bodys:
+			print(\"category: %s, category_id: %s, body: %s\" % [category.name, category.id, body.name])
 			for layer in body.layers:
-				print(\"category: %s, body: %s, layer: %s, order: %d\" % [category.name, body.name, layer.display_name, layer.order])
+				var texture : Texture2D = load(avatar_path + \"/\" + layer.dir + \"/\" + body.name + \".png\")
+				if category.id not in avatar_texture_dict:
+					avatar_texture_dict[category.id] = {}
+				var body_dict = avatar_texture_dict[category.id]
+				if body.name not in body_dict:
+					body_dict[body.name] = {}
+				var layer_dict = body_dict[body.name]
+				layer_dict[layer.id] = texture
 
-func _create_sprite(path):
-	var sprite = Sprite2D.new()
-	var texture = ImageTexture.new()
-	$CanvasLayer.add_child(sprite)
 
+func _create_sprite(category_id, body_name):
+	var category : AvatarCategory = avatar_category_dict[category_id]
+	var body : AvatarBodyPart = avatar_body_part_dict[category_id][body_name]
+	for layer in body.layers:
+		var texture = avatar_texture_dict[category_id][body.name][layer.id]
+		var sprite = Sprite2D.new()
+		sprite.texture = texture
+		sprite.z_index = layer.order
+		sprite.offset = Vector2(texture.get_width()/2, texture.get_height()/2)
+		sprite.position = Vector2(50, 50)
+		print(layer.dir, \"/\", body.name, \".png\")
+		$CanvasLayer.add_child(sprite)
 
 
 class AvatarPartLayer:
@@ -275,6 +291,16 @@ func _ready():
 	#load_xml(\"res://avatar/test.xml\")
 	#load_xml(\"res://avatar/「みゆ」サイズ小/character.xml\")
 	print(avatar_path)
+	_create_sprite(\"cat06696cea-3435-47af-b875-f52e838807bc\", \"基本\")
+	_create_sprite(\"cat336b4aa6-a0a1-4e2e-a1ff-87be6e56bf47\", \"25_★制服冬（小）\")
+	_create_sprite(\"cat2cb6a9b5-2095-40aa-8653-48b972d43127\", \"01_デフォルト\")
+	_create_sprite(\"catcb1aa8d8-51d7-4736-9465-f338be11fe1c\", \"10_制服スカート\")
+	_create_sprite(\"cat81b898bd-ba87-4775-9e20-6effb3940f95\", \"01_照れ\")
+	_create_sprite(\"catf3d6e058-c751-4ad3-b545-6068dcd424e7\", \"02_微笑\")
+	_create_sprite(\"cat9f3a860c-c062-4f45-87b1-396602bd88ec\", \"01_★温厚（デフォ）\")
+	_create_sprite(\"cate515d886-9d92-4879-9327-6c418d0eea8b\", \"01_★たれまゆ\")
+	_create_sprite(\"catd9ed6d23-2e9b-4a67-b49d-df5d727f7127\", \"01_サイドテール（右）\")
+	_create_sprite(\"cat5b4ae97d-3b8c-416a-b4d5-c563a2e8450f\", \"03_かぐや（ロング）\")
 	pass # Replace with function body.
 
 
@@ -284,6 +310,7 @@ func _process(delta):
 "
 
 [node name="Avatar" type="Node2D"]
+position = Vector2(560, 328)
 script = SubResource("GDScript_vfqsa")
 avatar_path = "res://avatar/「みゆ」サイズ小"
 

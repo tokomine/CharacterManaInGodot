@@ -1,0 +1,215 @@
+[gd_scene load_steps=2 format=3 uid="uid://jxf48sqmhle6"]
+
+[sub_resource type="GDScript" id="GDScript_vfqsa"]
+script/source = "extends Node2D
+
+@export_dir 
+var avatar_path : String = \"\" : 
+	set(value):
+		if not DirAccess.dir_exists_absolute(value):
+			push_error(\"path is not exists: \", value)
+			return
+		var xml_path: String = value+\"/character.xml\"
+		if not FileAccess.file_exists(xml_path):
+			push_error(\"character.xml is not exists.\")
+			return
+		avatar_path = value
+		_load_character_xml(xml_path)
+		pass
+
+
+var avatar_name : String
+var avatar_image_size : Vector2;
+var avatar_color_group_dict : Dictionary
+var avatar_layer_dict : Dictionary
+
+class AvatarPartLayer:
+	var dir : String
+	var id : String
+	var order : int
+	var color_group_id : String
+	var display_name : String
+	var color_model : String
+	func _init(_dir, _id, _order, _color_group_id, _display_name, _color_model):
+		dir = _dir
+		id = _id
+		order = _order
+		color_group_id = _color_group_id
+		display_name = _display_name
+		color_model = _color_model
+	func _to_string() -> String:
+		var dict = {}
+		dict[\"dir\"] = dir
+		dict[\"id\"] = id
+		dict[\"order\"] = order
+		dict[\"color_group_id\"] = color_group_id
+		dict[\"display_name\"] = display_name
+		dict[\"color_model\"] = color_model
+		return str(dict)
+	
+
+class AvatarBodyPart:
+	var name : String
+	var category : String
+	var layers : Array[AvatarPartLayer]
+	func _init(_name, _category, _layers):
+		name = _name
+		category = _category
+		layers = _layers
+
+
+class AvatarCategory:
+	var name : String
+	var id : String
+	var multiple_selectable : bool
+	var optional : bool
+	var bodys : Array[AvatarBodyPart]
+	func _init(_name, _id, _bodys, _multiple_selectable, _optional):
+		name = _name
+		id = _id
+		bodys = _bodys
+		multiple_selectable = _multiple_selectable
+		optional = _optional
+		
+
+class AvatarColorGroup:
+	var id : String
+	var name : String
+	func _init(_id, _name):
+		id = _id
+		name = _name
+
+
+func _find_node_children(node: Dictionary, children_name: String) -> Dictionary:
+	for children in node[\"children\"]:
+		if children[\"name\"] == children_name:
+			return children
+	return node
+
+	
+func _find_node_children_content(node: Dictionary, children_name: String):
+	var child: Dictionary = _find_node_children(node, children_name)
+	if child != node:
+		return child[\"__content__\"]
+	return
+
+	
+func _find_node_childrens(node: Dictionary, childrens: Array[String]) -> Dictionary:
+	var currentNode = node
+	for children_name in childrens:
+		var child = _find_node_children(currentNode, children_name)
+		if child == currentNode:
+			return node
+		currentNode = child
+	return currentNode
+
+
+func _find_node_childrens_content(node: Dictionary, childrens: Array[String]):
+	var child: Dictionary = _find_node_childrens(node, childrens)
+	if child != node:
+		return child[\"__content__\"]
+	return
+
+
+func _load_character_xml(path):
+	var root = XML.parse_file(path).to_dict()
+	avatar_name = _find_node_children_content(root, \"name\")
+	print(\"avatar_name: \", avatar_name)
+
+	var width : String = _find_node_childrens_content(root, [\"image-size\", \"width\"])
+	var height : String = _find_node_childrens_content(root, [\"image-size\", \"height\"])
+	avatar_image_size = Vector2(float(width), float(height))
+	print(\"avatar_image_size: \", avatar_image_size)
+	
+	var color_groups_node = _find_node_children(root, \"colorGroups\")
+	avatar_color_group_dict = _build_avatar_color_group_dict(color_groups_node)
+	print(\"avatar_color_group_dict: \", avatar_color_group_dict.keys())
+	
+	var categories_node = _find_node_children(root, \"categories\")
+	_build_avatar_category_dict(categories_node)
+	
+
+func _build_avatar_color_group_dict(node : Dictionary) -> Dictionary:
+	var dict = {}
+	for color_group_node in node[\"children\"]:
+		var id = color_group_node[\"attributes\"][\"id\"]
+		var name = _find_node_children_content(color_group_node, \"display-name\")
+		var group = AvatarColorGroup.new(id, name)
+		dict[id] = group
+	return dict
+
+
+func _build_avatar_category_dict(node : Dictionary) -> Dictionary:
+	var dict = {}
+	avatar_layer_dict = {}
+	var body_to_layer = {}
+	for category_node in node[\"children\"]:
+		var id = category_node[\"attributes\"][\"id\"]
+		var multiple_selectable = category_node[\"attributes\"][\"multipleSelectable\"]
+		var optional = category_node[\"attributes\"][\"optional\"]
+		var name = _find_node_children_content(category_node, \"display-name\")
+		var layer_nodes = _find_node_children(category_node, \"layers\")
+		_build_avatar_part_layer_to_dict(layer_nodes, avatar_layer_dict)
+		_build_avatar_body_part_dict(layer_nodes)
+
+	return dict
+
+
+func _build_avatar_body_part_dict(node : Dictionary) -> Dictionary:
+	var dict = {}
+	for layer_node in node[\"children\"]:
+
+		var id = layer_node[\"attributes\"][\"id\"]
+				print(id)
+		var dir = _find_node_children_content(layer_node, \"dir\")
+		var filenames = DirAccess.get_files_at(avatar_path + \"/dir\")
+		for filename in filenames:
+			print(filename)
+			if filename.ends_with(\".png\"):
+				print(filename)
+	return dict
+	
+func _build_avatar_part_layer_to_dict(node : Dictionary, dict : Dictionary) -> void:
+	for layer_node in node[\"children\"]:
+		var id = layer_node[\"attributes\"][\"id\"]
+		var color_group_node = _find_node_children(layer_node, \"colorGroup\")
+		var color_group_id : String = \"\"
+		if color_group_node != layer_node:
+			color_group_id = color_group_node[\"attributes\"][\"refid\"]
+		var display_name = _find_node_children_content(layer_node, \"display-name\")
+		var order : String = _find_node_children_content(layer_node, \"order\")
+		var dir = _find_node_children_content(layer_node, \"dir\")
+		var color_model = _find_node_children_content(layer_node, \"colorModel\")
+		var partLayer = AvatarPartLayer.new(dir, id, int(order), color_group_id, display_name, color_model)
+		dict[id] = partLayer
+
+
+	
+	
+	
+	#for node in dict[\"children\"]:
+#		var node_name = node[\"name\"]
+#		if node_name == \"name\":
+	#		avatar_name = node[\"__content__\"]
+	#	elif node_name == \"image-size\":
+	#		avatar_image_size = (node)
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	#test_load(\"res://avatar/「みゆ」サイズ小/character.xml\")
+	#test_load(\"res://avatar/test.xml\")
+	#load_xml(\"res://avatar/test.xml\")
+	#load_xml(\"res://avatar/「みゆ」サイズ小/character.xml\")
+	print(avatar_path)
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Avatar" type="Node2D"]
+script = SubResource("GDScript_vfqsa")
+avatar_path = "res://avatar/「みゆ」サイズ小"

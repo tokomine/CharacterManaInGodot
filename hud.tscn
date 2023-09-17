@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqrcbjiq41pwo"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_c7xyq"]
+[ext_resource type="FontFile" uid="uid://c074i06in8dqc" path="res://fonts/Xolonium-Regular.ttf" id="1_i5dwx"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_j3t3v"]
+action = &"start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_mjv78"]
+events = [SubResource("InputEventAction_j3t3v")]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_c7xyq")
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -126.5
+offset_right = 126.5
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_i5dwx")
+theme_override_font_sizes/font_size = 64
+text = "GODOT TEST"
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 45.0
+offset_bottom = 81.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_i5dwx")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -83.0
+offset_top = -86.0
+offset_right = 83.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_i5dwx")
+theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_mjv78")
+text = "start"
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

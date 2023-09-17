@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="miyu_size_s" rev="2020-02s" version="1.0" xsi:schemaLocation="http://charactermanaj.sourceforge.jp/schema/charactermanaj character.xsd"
+    xmlns="http://charactermanaj.sourceforge.jp/schema/charactermanaj">
+    <name xml:lang="ja">「みゆ」サイズ小</name>
+    <information>
+        <author xml:lang="ja">倦怠ライフ</author>
+        <description xml:lang="ja">著作権フリー立ち絵「みゆ」
+
+            ・使用報告やクレジット表記…なくてOK
+            ・年齢制限…気にしなくてOK
+            ・加工・修正…どんどんしてOK
+            ・商用利用…OK
+
+            ・再配布（素材そのものを売ったり配布したりする行為）…NG
+
+            ※背景は素材ではありませんのでイメージとしての
+            ご利用のみお願いします。
+
+            リクエストやサポートが必要な場合は
+            rotrot2222@yahoo.co.jpまでご連絡ください。
+
+            倦怠ライフ</description>
+    </information>
+    <image-size>
+        <width>500</width>
+        <height>1000</height>
+    </image-size>
+    <settings>
+        <entry key="custom-layer-pattern">true</entry>
+        <entry key="watch-dir">true</entry>
+    </settings>
+    <categories>
+        <category id="cat5b4ae97d-3b8c-416a-b4d5-c563a2e8450f" multipleSelectable="false" optional="false">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">【前髪】</display-name>
+            <layers>
+                <layer id="lay085e6c75-b1d3-4a3b-b66f-ea952fee1fd6">
+                    <display-name xml:lang="ja">髪色</display-name>
+                    <order>7</order>
+                    <colorGroup init-sync="true" refid="cgbdce97bc-b792-4f7f-b542-3da5bb7ebde0" />
+                    <dir>005_kami_kg_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay34fdebf6-4b9b-450b-813e-86746503e9a7">
+                    <display-name xml:lang="ja">髪色</display-name>
+                    <order>43</order>
+                    <colorGroup init-sync="true" refid="cgbdce97bc-b792-4f7f-b542-3da5bb7ebde0" />
+                    <dir>041_kami2_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layb53adfc9-6052-466c-bc88-d487e24f8bb3">
+                    <display-name xml:lang="ja">髪色</display-name>
+                    <order>51</order>
+                    <colorGroup init-sync="true" refid="cgbdce97bc-b792-4f7f-b542-3da5bb7ebde0" />
+                    <dir>049_kami1_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="laybc806ccf-1874-4cce-a81e-2e104b9edfef">
+                    <display-name xml:lang="ja">肌色</display-name>
+                    <order>24</order>
+                    <colorGroup init-sync="true" refid="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" />
+                    <dir>022_maekage</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layc886546e-c9e2-4d7f-a4e7-13d77a140e01">
+                    <display-name xml:lang="ja">髪</display-name>
+                    <order>8</order>
+                    <dir>006_kami_kg</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layda0391e9-4993-4413-85fa-3bf945833004">
+                    <display-name xml:lang="ja">髪</display-name>
+                    <order>45</order>
+                    <dir>042_kami2</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay2c07e606-e75b-4a1e-b0e8-24fe28741a0f">
+                    <display-name xml:lang="ja">髪</display-name>
+                    <order>52</order>
+                    <dir>050_kami1</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="catd9ed6d23-2e9b-4a67-b49d-df5d727f7127" multipleSelectable="false" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">【後ろ髪】</display-name>
+            <layers>
+                <layer id="layf1bf05e0-e21a-4278-b047-430a49efb010">
+                    <display-name xml:lang="ja">髪色</display-name>
+                    <order>5</order>
+                    <colorGroup init-sync="true" refid="cgbdce97bc-b792-4f7f-b542-3da5bb7ebde0" />
+                    <dir>003_kami3_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay071cf3f4-40c7-4ee0-a1ba-58585a3999a9">
+                    <display-name xml:lang="ja">髪</display-name>
+                    <order>6</order>
+                    <dir>004_kami3</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cate515d886-9d92-4879-9327-6c418d0eea8b" multipleSelectable="false" optional="true">
+            <visible-rows>7</visible-rows>
+            <display-name xml:lang="ja">【まゆげ】</display-name>
+            <layers>
+                <layer id="layd5ed9ec7-7ad7-42bc-bfa8-93db06fcd461">
+                    <display-name xml:lang="ja">まゆげ</display-name>
+                    <order>53</order>
+                    <dir>051_mayuge</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat9f3a860c-c062-4f45-87b1-396602bd88ec" multipleSelectable="false" optional="false">
+            <visible-rows>8</visible-rows>
+            <display-name xml:lang="ja">【目】</display-name>
+            <layers>
+                <layer id="lay57fdd283-f2ba-4d8d-8069-ff2d1fe12596">
+                    <display-name xml:lang="ja">瞳の色</display-name>
+                    <order>39</order>
+                    <colorGroup init-sync="true" refid="cg8f1ac47b-1bfe-44ea-b66f-ef6f052a7969" />
+                    <dir>037_me_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay0d08c7e4-b54e-4313-bade-6dbfe91a2eab">
+                    <display-name xml:lang="ja">目</display-name>
+                    <order>40</order>
+                    <dir>038_me</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="catf3d6e058-c751-4ad3-b545-6068dcd424e7" multipleSelectable="false" optional="false">
+            <visible-rows>8</visible-rows>
+            <display-name xml:lang="ja">【口】</display-name>
+            <layers>
+                <layer id="layf53e05bb-fce3-419b-a6d9-0a9585516173">
+                    <display-name xml:lang="ja">口</display-name>
+                    <order>41</order>
+                    <dir>039_kuti</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat81b898bd-ba87-4775-9e20-6effb3940f95" multipleSelectable="true" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">【表情】</display-name>
+            <layers>
+                <layer id="lay8af24c49-0a7b-4a69-ab7e-5e01e193d75c">
+                    <display-name xml:lang="ja">表情</display-name>
+                    <order>38</order>
+                    <dir>036_hyoujo2</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layc0fe5a71-24cb-481b-ad51-97817f3f63d8">
+                    <display-name xml:lang="ja">表情</display-name>
+                    <order>42</order>
+                    <dir>040_hyoujo1</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat336b4aa6-a0a1-4e2e-a1ff-87be6e56bf47" multipleSelectable="false" optional="false">
+            <visible-rows>10</visible-rows>
+            <display-name xml:lang="ja">【服】</display-name>
+            <layers>
+                <layer id="layb6f78b25-fa2b-42d4-bb0b-6053648377dc">
+                    <display-name xml:lang="ja">服色</display-name>
+                    <order>13</order>
+                    <colorGroup init-sync="true" refid="cg631333be-0c5f-436a-ac9f-058ef3f93e18" />
+                    <dir>011_huku2_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay8171bb9d-de1b-4ee1-a6e3-30063c23accd">
+                    <display-name xml:lang="ja">服色</display-name>
+                    <order>18</order>
+                    <colorGroup init-sync="true" refid="cg631333be-0c5f-436a-ac9f-058ef3f93e18" />
+                    <dir>016_sode_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layd3b40a6e-0ff2-41ae-882f-31923065e3b9">
+                    <display-name xml:lang="ja">服色</display-name>
+                    <order>33</order>
+                    <colorGroup init-sync="true" refid="cg631333be-0c5f-436a-ac9f-058ef3f93e18" />
+                    <dir>031_huku1_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="laydec1bcec-4521-4cf1-959e-8bea7e920ac5">
+                    <display-name xml:lang="ja">服色</display-name>
+                    <order>55</order>
+                    <colorGroup init-sync="true" refid="cg631333be-0c5f-436a-ac9f-058ef3f93e18" />
+                    <dir>053_huku0_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay14de31cf-7143-4437-9d53-da05477ce95c">
+                    <display-name xml:lang="ja">肌色</display-name>
+                    <order>17</order>
+                    <colorGroup init-sync="true" refid="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" />
+                    <dir>015_sode_h</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layc716134d-50dc-4f37-a44b-fcba3019ee53">
+                    <display-name xml:lang="ja">肌色</display-name>
+                    <order>22</order>
+                    <colorGroup init-sync="true" refid="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" />
+                    <dir>020_ude_h</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay5f418f3d-29cb-406f-a201-178dcb076536">
+                    <display-name xml:lang="ja">肌色</display-name>
+                    <order>32</order>
+                    <colorGroup init-sync="true" refid="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" />
+                    <dir>030_huku1_h</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layda850b59-d2c3-4153-a520-1e9402665791">
+                    <display-name xml:lang="ja">肌色</display-name>
+                    <order>54</order>
+                    <colorGroup init-sync="true" refid="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" />
+                    <dir>052_huku0_h</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay67046b98-a139-4a0c-91e4-d472ba617f25">
+                    <display-name xml:lang="ja">服</display-name>
+                    <order>14</order>
+                    <dir>012_huku2</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layf5663e06-eddb-49b2-85d5-0d3acf173a28">
+                    <display-name xml:lang="ja">袖</display-name>
+                    <order>19</order>
+                    <dir>017_sode</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layf9b7871d-aa35-4858-b951-f668088243f8">
+                    <display-name xml:lang="ja">腕</display-name>
+                    <order>23</order>
+                    <dir>021_ude</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay16ec2d44-833f-4857-b5a6-3c5c42cc5118">
+                    <display-name xml:lang="ja">服</display-name>
+                    <order>34</order>
+                    <dir>032_huku1</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay83cb5b3b-dc26-4024-be0c-6b97e84d957b">
+                    <display-name xml:lang="ja">服</display-name>
+                    <order>56</order>
+                    <dir>054_huku0</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat621113b7-b706-4916-a052-598e7637acb9" multipleSelectable="false" optional="true">
+            <visible-rows>3</visible-rows>
+            <display-name xml:lang="ja">【アウター】</display-name>
+            <layers>
+                <layer id="lay4815e67d-9de0-49fe-88b5-cb099690ddcc">
+                    <display-name xml:lang="ja">アウター色</display-name>
+                    <order>15</order>
+                    <colorGroup init-sync="true" refid="cgcd2b2ce5-3ec7-474e-9347-d745bc948779" />
+                    <dir>013_uwagi2_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layfbd2bd2f-6976-48a6-916d-ffef1adc60e6">
+                    <display-name xml:lang="ja">アウター色</display-name>
+                    <order>36</order>
+                    <colorGroup init-sync="true" refid="cgcd2b2ce5-3ec7-474e-9347-d745bc948779" />
+                    <dir>034_uwagi1_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay38018adf-f8f2-4c34-a4f0-86bc9ed4a60d">
+                    <display-name xml:lang="ja">肌色</display-name>
+                    <order>35</order>
+                    <colorGroup init-sync="true" refid="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" />
+                    <dir>033_uwagi1_h</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layb980eb8f-e460-44c7-9145-cb99c80474d5">
+                    <display-name xml:lang="ja">アウター</display-name>
+                    <order>16</order>
+                    <dir>014_uwagi2</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layfe723487-0378-4819-be36-07918028555a">
+                    <display-name xml:lang="ja">アウター</display-name>
+                    <order>37</order>
+                    <dir>035_uwagi1</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="catcb1aa8d8-51d7-4736-9465-f338be11fe1c" multipleSelectable="false" optional="true">
+            <visible-rows>8</visible-rows>
+            <display-name xml:lang="ja">【ズボン】</display-name>
+            <layers>
+                <layer id="lay4446db13-b6f6-41ff-8272-dac97d9fd2b5">
+                    <display-name xml:lang="ja">ズボン色</display-name>
+                    <order>30</order>
+                    <colorGroup init-sync="true" refid="cg8de0d280-6fce-4636-b721-1b3555553552" />
+                    <dir>028_zubon_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay86dc048a-669a-4c93-970b-e09d98b5857c">
+                    <display-name xml:lang="ja">ズボン</display-name>
+                    <order>31</order>
+                    <dir>029_zubon</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat59c46aab-34c5-4717-a3ef-10182b484cef" multipleSelectable="false" optional="true">
+            <visible-rows>4</visible-rows>
+            <display-name xml:lang="ja">【靴】</display-name>
+            <layers>
+                <layer id="lay17f855c2-9cad-495f-8aa2-1cfaede4d52c">
+                    <display-name xml:lang="ja">靴色</display-name>
+                    <order>11</order>
+                    <colorGroup init-sync="true" refid="cg3a053739-3e25-4a66-86da-0492277c6c30" />
+                    <dir>009_kutu2_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay11afcf3d-6e89-49a9-ad9b-c76779fb9fc7">
+                    <display-name xml:lang="ja">靴色</display-name>
+                    <order>28</order>
+                    <colorGroup init-sync="true" refid="cg3a053739-3e25-4a66-86da-0492277c6c30" />
+                    <dir>026_kutu1_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layb73e7608-dd7e-4d8f-aff9-4c9dd7ef99f5">
+                    <display-name xml:lang="ja">靴</display-name>
+                    <order>12</order>
+                    <dir>010_kutu2</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay64dd3210-13d9-47a6-b9ba-2209bdfc8a42">
+                    <display-name xml:lang="ja">靴</display-name>
+                    <order>29</order>
+                    <dir>027_kutu1</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat6ee56817-bb51-46d7-989a-152e02a5aa35" multipleSelectable="false" optional="true">
+            <visible-rows>3</visible-rows>
+            <display-name xml:lang="ja">【靴下】</display-name>
+            <layers>
+                <layer id="layc95ad8da-e057-41f7-a556-d989a0ef6781">
+                    <display-name xml:lang="ja">靴下色</display-name>
+                    <order>26</order>
+                    <colorGroup init-sync="true" refid="cg6cc6301e-1a6b-4ffc-9072-8b3408222afb" />
+                    <dir>024_kutushita_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layb1fb473f-a7fb-44a1-aa8b-2186d712aacc">
+                    <display-name xml:lang="ja">靴下</display-name>
+                    <order>27</order>
+                    <dir>025_kutushita</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="catdcfb7814-50c3-4abf-9345-605c8296091e" multipleSelectable="false" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">【帽子】</display-name>
+            <layers>
+                <layer id="lay2c7af4e8-0591-4e66-9e1a-e97dc385dc50">
+                    <display-name xml:lang="ja">帽子色</display-name>
+                    <order>9</order>
+                    <colorGroup init-sync="true" refid="cge60d0142-2382-460f-a7db-2d06011ea38e" />
+                    <dir>007_boushi2_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay6c043437-7c3a-4825-8cb7-cf296b332cf8">
+                    <display-name xml:lang="ja">帽子色</display-name>
+                    <order>57</order>
+                    <colorGroup init-sync="true" refid="cge60d0142-2382-460f-a7db-2d06011ea38e" />
+                    <dir>055_boushi_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="laye619d362-4fc2-4733-adea-e91e9223a024">
+                    <display-name xml:lang="ja">帽子</display-name>
+                    <order>10</order>
+                    <dir>008_boushi2</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay6ae3a071-72e5-430e-b723-3d46b81ff6f6">
+                    <display-name xml:lang="ja">帽子</display-name>
+                    <order>58</order>
+                    <dir>056_boushi</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat02275577-22ba-44ec-b9b8-117750920da9" multipleSelectable="true" optional="true">
+            <visible-rows>8</visible-rows>
+            <display-name xml:lang="ja">【オプション】</display-name>
+            <layers>
+                <layer id="lay29396c52-a137-4df1-92e3-e597806008f7">
+                    <display-name xml:lang="ja">オプション色</display-name>
+                    <order>49</order>
+                    <colorGroup init-sync="true" refid="cgb6bc72ca-957c-4673-aefa-64607d441479" />
+                    <dir>047_option2_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layeb8fb50d-a6cd-4c7a-ac15-5ec526126fa0">
+                    <display-name xml:lang="ja">オプション色</display-name>
+                    <order>59</order>
+                    <colorGroup init-sync="true" refid="cgb6bc72ca-957c-4673-aefa-64607d441479" />
+                    <dir>057_option1_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="laya7571b3f-9aab-41cd-84de-09636372062f">
+                    <display-name xml:lang="ja">羽の色</display-name>
+                    <order>1</order>
+                    <colorGroup init-sync="true" refid="cgb6bc72ca-957c-4673-aefa-64607d441479" />
+                    <dir>0001_option4_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="laya3774b25-8def-4e30-bd9e-da0d401d08fe">
+                    <display-name xml:lang="ja">オプション</display-name>
+                    <order>25</order>
+                    <dir>023_option3</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay10c64e1a-618f-4393-9e72-6a1839e6dca6">
+                    <display-name xml:lang="ja">オプション</display-name>
+                    <order>60</order>
+                    <dir>058_option1</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay9ee0dc2b-0d83-4d5b-8a37-616a830fb92c">
+                    <display-name xml:lang="ja">オプション</display-name>
+                    <order>50</order>
+                    <dir>048_option2</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay2cd1b885-1323-480f-b42a-b7f5d0a82543">
+                    <display-name xml:lang="ja">悪魔の羽</display-name>
+                    <order>2</order>
+                    <dir>0001_option4</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat2cb6a9b5-2095-40aa-8653-48b972d43127" multipleSelectable="true" optional="true">
+            <visible-rows>3</visible-rows>
+            <display-name xml:lang="ja">【耳】</display-name>
+            <layers>
+                <layer id="layf96d182d-d7cc-4801-957b-67714025009d">
+                    <display-name xml:lang="ja">獣耳色</display-name>
+                    <order>3</order>
+                    <colorGroup init-sync="true" refid="cgcb17d16b-bb61-4877-8660-54fb2678e208" />
+                    <dir>001_sippo_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="layfdb321de-dedd-4352-8eea-3aa95b3f7e1e">
+                    <display-name xml:lang="ja">肌色</display-name>
+                    <order>47</order>
+                    <colorGroup init-sync="true" refid="cgcb17d16b-bb61-4877-8660-54fb2678e208" />
+                    <dir>045_mimi_c</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay1b17cd55-8205-431a-b630-8bc9aab84b2d">
+                    <display-name xml:lang="ja">獣耳</display-name>
+                    <order>46</order>
+                    <colorGroup init-sync="true" refid="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" />
+                    <dir>044_mimi_h</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay15de342a-65bf-4329-9098-e7a90369c99e">
+                    <display-name xml:lang="ja">獣耳</display-name>
+                    <order>4</order>
+                    <dir>002_sippo</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay9da35961-267d-498e-9200-f6b9e98e201d">
+                    <display-name xml:lang="ja">耳</display-name>
+                    <order>48</order>
+                    <dir>046_mimi</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cataf0e344a-4b8b-4de8-b500-104487ce5911" multipleSelectable="false" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">【感情】</display-name>
+            <layers>
+                <layer id="layab11aa91-c49f-4972-8a04-f49e06512f21">
+                    <display-name xml:lang="ja">感情</display-name>
+                    <order>61</order>
+                    <dir>059_kanjou</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat06696cea-3435-47af-b875-f52e838807bc" multipleSelectable="false" optional="false">
+            <visible-rows>0</visible-rows>
+            <display-name xml:lang="ja">（肌の色）</display-name>
+            <layers>
+                <layer id="lay3f728ac7-78cd-4e9e-8f8f-dd6c417cf793">
+                    <display-name xml:lang="ja">肌色</display-name>
+                    <order>20</order>
+                    <colorGroup init-sync="true" refid="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" />
+                    <dir>018_karada_h</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+                <layer id="lay47b3e505-5d2f-4624-bcc3-877378fe1004">
+                    <display-name xml:lang="ja">体</display-name>
+                    <order>21</order>
+                    <dir>019_karada</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat3fbcf7fc-6ece-4d03-9030-0f875f83e4c4" multipleSelectable="false" optional="true">
+            <visible-rows>3</visible-rows>
+            <display-name xml:lang="ja">（背景）</display-name>
+            <layers>
+                <layer id="laya96fcbba-7539-4a65-a9d9-3941ab7c2412">
+                    <display-name xml:lang="ja">背景</display-name>
+                    <order>0</order>
+                    <dir>haikei</dir>
+                    <colorModel>HSB</colorModel>
+                </layer>
+            </layers>
+        </category>
+    </categories>
+    <colorGroups>
+        <colorGroup id="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3">
+            <display-name xml:lang="ja">肌</display-name>
+        </colorGroup>
+        <colorGroup id="cgbdce97bc-b792-4f7f-b542-3da5bb7ebde0">
+            <display-name xml:lang="ja">髪</display-name>
+        </colorGroup>
+        <colorGroup id="cgcb17d16b-bb61-4877-8660-54fb2678e208">
+            <display-name xml:lang="ja">獣耳</display-name>
+        </colorGroup>
+        <colorGroup id="cg631333be-0c5f-436a-ac9f-058ef3f93e18">
+            <display-name xml:lang="ja">服</display-name>
+        </colorGroup>
+        <colorGroup id="cgb6bc72ca-957c-4673-aefa-64607d441479">
+            <display-name xml:lang="ja">オプション</display-name>
+        </colorGroup>
+        <colorGroup id="cg6cc6301e-1a6b-4ffc-9072-8b3408222afb">
+            <display-name xml:lang="ja">靴下</display-name>
+        </colorGroup>
+        <colorGroup id="cg3a053739-3e25-4a66-86da-0492277c6c30">
+            <display-name xml:lang="ja">靴</display-name>
+        </colorGroup>
+        <colorGroup id="cg8f1ac47b-1bfe-44ea-b66f-ef6f052a7969">
+            <display-name xml:lang="ja">瞳</display-name>
+        </colorGroup>
+        <colorGroup id="cgcd2b2ce5-3ec7-474e-9347-d745bc948779">
+            <display-name xml:lang="ja">上着</display-name>
+        </colorGroup>
+        <colorGroup id="cge60d0142-2382-460f-a7db-2d06011ea38e">
+            <display-name xml:lang="ja">帽子</display-name>
+        </colorGroup>
+        <colorGroup id="cg8de0d280-6fce-4636-b721-1b3555553552">
+            <display-name xml:lang="ja">ズボン</display-name>
+        </colorGroup>
+    </colorGroups>
+    <recommendations />
+    <presets default-preset="ps31bfa6f4-2349-4ae8-8bbc-fd803056077a">
+        <preset id="ps31bfa6f4-2349-4ae8-8bbc-fd803056077a">
+            <display-name xml:lang="ja">・魔法使い（中</display-name>
+            <background-color color="#ffffff" />
+            <category refid="catf3d6e058-c751-4ad3-b545-6068dcd424e7">
+                <parts name="18_んー">
+                    <color>
+                        <layer refid="layf53e05bb-fce3-419b-a6d9-0a9585516173">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat06696cea-3435-47af-b875-f52e838807bc">
+                <parts name="基本">
+                    <color>
+                        <layer refid="lay3f728ac7-78cd-4e9e-8f8f-dd6c417cf793">
+                            <color-group group="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay47b3e505-5d2f-4624-bcc3-877378fe1004">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat81b898bd-ba87-4775-9e20-6effb3940f95">
+                <parts name="01_照れ">
+                    <color>
+                        <layer refid="lay8af24c49-0a7b-4a69-ab7e-5e01e193d75c">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="layc0fe5a71-24cb-481b-ad51-97817f3f63d8">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="catd9ed6d23-2e9b-4a67-b49d-df5d727f7127">
+                <parts name="04_ポニーテール">
+                    <color>
+                        <layer refid="layf1bf05e0-e21a-4278-b047-430a49efb010">
+                            <color-group group="cgbdce97bc-b792-4f7f-b542-3da5bb7ebde0" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="-0.11" hue="-0.71" saturation="-0.37" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay071cf3f4-40c7-4ee0-a1ba-58585a3999a9">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat59c46aab-34c5-4717-a3ef-10182b484cef">
+                <parts name="07_ブーツ">
+                    <color>
+                        <layer refid="lay11afcf3d-6e89-49a9-ad9b-c76779fb9fc7">
+                            <color-group group="cg3a053739-3e25-4a66-86da-0492277c6c30" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.24" hue="0.01" saturation="-0.11" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay64dd3210-13d9-47a6-b9ba-2209bdfc8a42">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay17f855c2-9cad-495f-8aa2-1cfaede4d52c">
+                            <color-group group="cg3a053739-3e25-4a66-86da-0492277c6c30" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.24" hue="0.01" saturation="-0.11" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="layb73e7608-dd7e-4d8f-aff9-4c9dd7ef99f5">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat6ee56817-bb51-46d7-989a-152e02a5aa35">
+                <parts name="06_ストッキング">
+                    <color>
+                        <layer refid="layb1fb473f-a7fb-44a1-aa8b-2186d712aacc">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="layc95ad8da-e057-41f7-a556-d989a0ef6781">
+                            <color-group group="cg6cc6301e-1a6b-4ffc-9072-8b3408222afb" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.23" hue="-0.59" saturation="-0.01" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat5b4ae97d-3b8c-416a-b4d5-c563a2e8450f">
+                <parts name="03_かぐや（ロング）">
+                    <color>
+                        <layer refid="lay2c07e606-e75b-4a1e-b0e8-24fe28741a0f">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="laybc806ccf-1874-4cce-a81e-2e104b9edfef">
+                            <color-group group="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="layc886546e-c9e2-4d7f-a4e7-13d77a140e01">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="layb53adfc9-6052-466c-bc88-d487e24f8bb3">
+                            <color-group group="cgbdce97bc-b792-4f7f-b542-3da5bb7ebde0" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="-0.11" hue="-0.71" saturation="-0.37" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay34fdebf6-4b9b-450b-813e-86746503e9a7">
+                            <color-group group="cgbdce97bc-b792-4f7f-b542-3da5bb7ebde0" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="-0.11" hue="-0.71" saturation="-0.37" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay085e6c75-b1d3-4a3b-b66f-ea952fee1fd6">
+                            <color-group group="cgbdce97bc-b792-4f7f-b542-3da5bb7ebde0" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="-0.11" hue="-0.71" saturation="-0.37" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="layda0391e9-4993-4413-85fa-3bf945833004">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat2cb6a9b5-2095-40aa-8653-48b972d43127">
+                <parts name="01_デフォルト">
+                    <color>
+                        <layer refid="layf96d182d-d7cc-4801-957b-67714025009d">
+                            <color-group group="cgcb17d16b-bb61-4877-8660-54fb2678e208" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="-0.2" hue="0.4" saturation="-0.08" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay9da35961-267d-498e-9200-f6b9e98e201d">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay1b17cd55-8205-431a-b630-8bc9aab84b2d">
+                            <color-group group="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="layfdb321de-dedd-4352-8eea-3aa95b3f7e1e">
+                            <color-group group="cgcb17d16b-bb61-4877-8660-54fb2678e208" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="-0.2" hue="0.4" saturation="-0.08" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay15de342a-65bf-4329-9098-e7a90369c99e">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat336b4aa6-a0a1-4e2e-a1ff-87be6e56bf47">
+                <parts name="41_　魔法使い（中）">
+                    <color>
+                        <layer refid="laydec1bcec-4521-4cf1-959e-8bea7e920ac5">
+                            <color-group group="cg631333be-0c5f-436a-ac9f-058ef3f93e18" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="-0.2" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay67046b98-a139-4a0c-91e4-d472ba617f25">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="layda850b59-d2c3-4153-a520-1e9402665791">
+                            <color-group group="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="layf9b7871d-aa35-4858-b951-f668088243f8">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="layb6f78b25-fa2b-42d4-bb0b-6053648377dc">
+                            <color-group group="cg631333be-0c5f-436a-ac9f-058ef3f93e18" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="-0.2" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="layf5663e06-eddb-49b2-85d5-0d3acf173a28">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="layd3b40a6e-0ff2-41ae-882f-31923065e3b9">
+                            <color-group group="cg631333be-0c5f-436a-ac9f-058ef3f93e18" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="-0.2" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay83cb5b3b-dc26-4024-be0c-6b97e84d957b">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="layc716134d-50dc-4f37-a44b-fcba3019ee53">
+                            <color-group group="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay5f418f3d-29cb-406f-a201-178dcb076536">
+                            <color-group group="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay14de31cf-7143-4437-9d53-da05477ce95c">
+                            <color-group group="cgb5efe2f3-d6ae-4751-a45b-bb25147937e3" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay16ec2d44-833f-4857-b5a6-3c5c42cc5118">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay8171bb9d-de1b-4ee1-a6e3-30063c23accd">
+                            <color-group group="cg631333be-0c5f-436a-ac9f-058ef3f93e18" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="-0.2" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="catdcfb7814-50c3-4abf-9345-605c8296091e">
+                <parts name="10_後ろリボン">
+                    <color>
+                        <layer refid="lay2c7af4e8-0591-4e66-9e1a-e97dc385dc50">
+                            <color-group group="cge60d0142-2382-460f-a7db-2d06011ea38e" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="-0.57" hue="-0.01" saturation="0.06" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="laye619d362-4fc2-4733-adea-e91e9223a024">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay6ae3a071-72e5-430e-b723-3d46b81ff6f6">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay6c043437-7c3a-4825-8cb7-cf296b332cf8">
+                            <color-group group="cge60d0142-2382-460f-a7db-2d06011ea38e" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="-0.57" hue="-0.01" saturation="0.06" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cate515d886-9d92-4879-9327-6c418d0eea8b">
+                <parts name="07_★短い">
+                    <color>
+                        <layer refid="layd5ed9ec7-7ad7-42bc-bfa8-93db06fcd461">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat9f3a860c-c062-4f45-87b1-396602bd88ec">
+                <parts name="12_★勝気（デフォ）">
+                    <color>
+                        <layer refid="lay57fdd283-f2ba-4d8d-8069-ff2d1fe12596">
+                            <color-group group="cg8f1ac47b-1bfe-44ea-b66f-ef6f052a7969" synchronized="true" />
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.11" hue="0.5" saturation="-0.04" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                        <layer refid="lay0d08c7e4-b54e-4313-bade-6dbfe91a2eab">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0" />
+                                <green factor="1.0" gamma="1.0" offset="0" />
+                                <blue factor="1.0" gamma="1.0" offset="0" />
+                                <alpha factor="1.0" gamma="1.0" offset="0" />
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0" />
+                            <rgb-replace gray="1.0" replace-type="NONE" />
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <active-custom-layer-patterns />
+        </preset>
+    </presets>
+</character>

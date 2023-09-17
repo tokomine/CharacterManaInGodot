@@ -1,4 +1,5 @@
-extends Node2D
+extends CanvasLayer
+
 
 @export_dir 
 var avatar_path : String = "" : 
@@ -289,10 +290,9 @@ func _ready():
 	#load_xml("res://avatar/「みゆ」サイズ小/character.xml")
 	print(avatar_path)
 	_create_sprite("cat06696cea-3435-47af-b875-f52e838807bc", "基本")
-	#_create_sprite("cat336b4aa6-a0a1-4e2e-a1ff-87be6e56bf47", "25_★制服冬（小）")
+	_create_sprite("cat336b4aa6-a0a1-4e2e-a1ff-87be6e56bf47", "25_★制服冬（小）")
 	_create_sprite("cat2cb6a9b5-2095-40aa-8653-48b972d43127", "01_デフォルト")
 	_create_sprite("catcb1aa8d8-51d7-4736-9465-f338be11fe1c", "10_制服スカート")
-	_create_sprite("cat336b4aa6-a0a1-4e2e-a1ff-87be6e56bf47", "22_★制服春秋（小）")
 	_create_sprite("cat81b898bd-ba87-4775-9e20-6effb3940f95", "01_照れ")
 	_create_sprite("catf3d6e058-c751-4ad3-b545-6068dcd424e7", "02_微笑")
 	_create_sprite("cat9f3a860c-c062-4f45-87b1-396602bd88ec", "01_★温厚（デフォ）")

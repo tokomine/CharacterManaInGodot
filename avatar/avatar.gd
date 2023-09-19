@@ -1,3 +1,4 @@
+@tool
 extends Node2D
 
 @export_dir 
@@ -13,13 +14,92 @@ var avatar_path : String = "" :
 		avatar_path = value
 		_load_character_xml(xml_path)
 		_init_all_texture()
-		pass
+		display_dict = {}
+		display_avatar = false
+		
+
+@export var display_avatar = false:
+	set(value):
+		display_avatar = value
+		#if display_avatar:
+		#	_setup_default_display()
+		notify_property_list_changed()
+
+
+var display_dict = {}
+
+func _set(property, value):
+	if display_dict == null:
+		display_dict = {}
+	display_dict[property] = value
+	return true
+
+func _get(property):
+	if display_dict == null:
+		display_dict = {}
+	if property in display_dict:
+		return display_dict[property]
+	return
+
+
+func _get_property_list():
+	# By default, `hammer_type` is not visible in the editor.
+	var property_usage = PROPERTY_USAGE_NO_EDITOR
+
+	if display_avatar:
+		property_usage = PROPERTY_USAGE_DEFAULT
+
+	var properties = []
+	
+	properties.append({
+		name = "Display",
+		type = TYPE_NIL,
+		hint_string = "display_",
+		usage = PROPERTY_USAGE_GROUP | PROPERTY_USAGE_SCRIPT_VARIABLE
+	})
+	
+	for category in category_list:
+		var body_name_list = []
+		for body in category.bodys:
+			body_name_list.push_back(body.name)
+		var hint = PROPERTY_HINT_ENUM
+		var hint_string = ",".join(body_name_list)
+		var type = TYPE_STRING
+		if category.multiple_selectable:
+			hint = PROPERTY_HINT_FLAGS
+			type = TYPE_INT
+		elif category.optional:
+			hint_string = "-," + hint_string
+		properties.append({
+			"name": "display_" + category.name,
+			"type": type,
+			"usage": property_usage, # See above assignment.
+			"hint": hint,
+			"hint_string": hint_string
+		})
+
+	return properties
+
+func _setup_default_display():
+	for category in category_list:
+		if category.name not in category_body_names_dict:
+			continue
+		if category_body_names_dict[category.name].size() == 0:
+			continue
+		if category.multiple_selectable:
+			continue
+		if category.optional:
+			_set("display_" + category.name, "-")
+		else:
+			_set("display_" + category.name, category_body_names_dict[category.name][0])
 
 
 var avatar_name : String
 var avatar_image_size : Vector2;
 var avatar_color_group_dict : Dictionary
 var avatar_category_dict : Dictionary
+var category_list : Array[AvatarCategory]
+var category_body_names_dict : Dictionary
 
 # key : category_id,  value : { layer_id : AvatarPartLayer}
 var avatar_layer_dict : Dictionary
@@ -199,17 +279,18 @@ func _build_avatar_color_group_dict(node : Dictionary) -> Dictionary:
 	var dict = {}
 	for color_group_node in node["children"]:
 		var id = color_group_node["attributes"]["id"]
-		var name = _find_node_children_content(color_group_node, "display-name")
-		var group = AvatarColorGroup.new(id, name)
+		var group_name = _find_node_children_content(color_group_node, "display-name")
+		var group = AvatarColorGroup.new(id, group_name)
 		dict[id] = group
 	return dict
 
 
 func _build_avatar_category_dict(node : Dictionary) -> Dictionary:
 	var dict = {}
+	category_list = []
+	category_body_names_dict = {}
 	avatar_layer_dict = {}
 	avatar_body_part_dict = {}
-	var body_to_layer = {}
 	for category_node in node["children"]:
 		var category_id = category_node["attributes"]["id"]
 		var multiple_selectable = category_node["attributes"]["multipleSelectable"]
@@ -233,6 +314,12 @@ func _build_avatar_category_dict(node : Dictionary) -> Dictionary:
 			bodys.push_back(body)
 		var category = AvatarCategory.new(category_name, category_id, bodys, multiple_selectable, optional)
 		dict[category_id] = category
+		var body_name_list = []
+		for body in category.bodys:
+			body_name_list.push_back(body.name)
+		body_name_list.sort()
+		category_body_names_dict[category.name] = body_name_list
+		category_list.push_back(category)
 	return dict
 
 
@@ -246,11 +333,11 @@ func _build_avatar_body_part_dict(node : Dictionary) -> Dictionary:
 		for filename in filenames:
 			if not filename.ends_with(".png"):
 				continue
-			var name = filename.substr(0, len(filename)-4)
-			if name not in dict:
-				dict[name] = [id]
+			var subname = filename.substr(0, len(filename)-4)
+			if subname not in dict:
+				dict[subname] = [id]
 			else:
-				dict[name].push_back(id)
+				dict[subname].push_back(id)
 	return dict
 	
 func _build_avatar_part_layer_dict(node : Dictionary) -> Dictionary:
@@ -270,37 +357,24 @@ func _build_avatar_part_layer_dict(node : Dictionary) -> Dictionary:
 	return dict
 
 
-	
-	
-	
-	#for node in dict["children"]:
-#		var node_name = node["name"]
-#		if node_name == "name":
-	#		avatar_name = node["__content__"]
-	#	elif node_name == "image-size":
-	#		avatar_image_size = (node)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#test_load("res://avatar/「みゆ」サイズ小/character.xml")
-	#test_load("res://avatar/test.xml")
-	#load_xml("res://avatar/test.xml")
-	#load_xml("res://avatar/「みゆ」サイズ小/character.xml")
-	print(avatar_path)
-	_create_sprite("cat06696cea-3435-47af-b875-f52e838807bc", "基本")
-	#_create_sprite("cat336b4aa6-a0a1-4e2e-a1ff-87be6e56bf47", "25_★制服冬（小）")
-	_create_sprite("cat2cb6a9b5-2095-40aa-8653-48b972d43127", "01_デフォルト")
-	_create_sprite("catcb1aa8d8-51d7-4736-9465-f338be11fe1c", "10_制服スカート")
-	_create_sprite("cat336b4aa6-a0a1-4e2e-a1ff-87be6e56bf47", "22_★制服春秋（小）")
-	_create_sprite("cat81b898bd-ba87-4775-9e20-6effb3940f95", "01_照れ")
-	_create_sprite("catf3d6e058-c751-4ad3-b545-6068dcd424e7", "02_微笑")
-	_create_sprite("cat9f3a860c-c062-4f45-87b1-396602bd88ec", "01_★温厚（デフォ）")
-	_create_sprite("cate515d886-9d92-4879-9327-6c418d0eea8b", "01_★たれまゆ")
-	_create_sprite("catd9ed6d23-2e9b-4a67-b49d-df5d727f7127", "01_サイドテール（右）")
-	_create_sprite("cat5b4ae97d-3b8c-416a-b4d5-c563a2e8450f", "03_かぐや（ロング）")
+#	print(avatar_path)
+#	_create_sprite("cat06696cea-3435-47af-b875-f52e838807bc", "基本")
+#	#_create_sprite("cat336b4aa6-a0a1-4e2e-a1ff-87be6e56bf47", "25_★制服冬（小）")
+#	_create_sprite("cat2cb6a9b5-2095-40aa-8653-48b972d43127", "01_デフォルト")
+#	_create_sprite("catcb1aa8d8-51d7-4736-9465-f338be11fe1c", "10_制服スカート")
+#	_create_sprite("cat336b4aa6-a0a1-4e2e-a1ff-87be6e56bf47", "22_★制服春秋（小）")
+#	_create_sprite("cat81b898bd-ba87-4775-9e20-6effb3940f95", "01_照れ")
+#	_create_sprite("catf3d6e058-c751-4ad3-b545-6068dcd424e7", "02_微笑")
+#	_create_sprite("cat9f3a860c-c062-4f45-87b1-396602bd88ec", "01_★温厚（デフォ）")
+#	_create_sprite("cate515d886-9d92-4879-9327-6c418d0eea8b", "01_★たれまゆ")
+#	_create_sprite("catd9ed6d23-2e9b-4a67-b49d-df5d727f7127", "01_サイドテール（右）")
+#	_create_sprite("cat5b4ae97d-3b8c-416a-b4d5-c563a2e8450f", "03_かぐや（ロング）")
 	pass # Replace with function body.
-
+#
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

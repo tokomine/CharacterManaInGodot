@@ -6,5 +6,6 @@
 position = Vector2(560, 328)
 script = ExtResource("1_oaqel")
 avatar_path = "res://avatar/「みゆ」サイズ小"
+display_avatar = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

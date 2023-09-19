@@ -1,6 +1,12 @@
 @tool
 extends Node2D
 
+
+####################################################################################################
+################ Property
+####################################################################################################
+
+
 @export_dir 
 var avatar_path : String = "" : 
 	set(value):
@@ -14,25 +20,25 @@ var avatar_path : String = "" :
 		avatar_path = value
 		_load_character_xml(xml_path)
 		_init_all_texture()
-		display_dict = {}
+		_clear_avatar()
 		display_avatar = false
-		
+
 
 @export var display_avatar = false:
 	set(value):
 		display_avatar = value
-		#if display_avatar:
-		#	_setup_default_display()
+		if display_avatar:
+			_clear_avatar()
+			_setup_default_display()
 		notify_property_list_changed()
 
-
-var display_dict = {}
 
 func _set(property, value):
 	if display_dict == null:
 		display_dict = {}
 	display_dict[property] = value
 	return true
+
 
 func _get(property):
 	if display_dict == null:
@@ -51,17 +57,17 @@ func _get_property_list():
 
 	var properties = []
 	
+	print(DISPLAY_PREFIX)
+	
 	properties.append({
 		name = "Display",
 		type = TYPE_NIL,
-		hint_string = "display_",
+		hint_string = DISPLAY_PREFIX,
 		usage = PROPERTY_USAGE_GROUP | PROPERTY_USAGE_SCRIPT_VARIABLE
 	})
 	
 	for category in category_list:
-		var body_name_list = []
-		for body in category.bodys:
-			body_name_list.push_back(body.name)
+		var body_name_list = category_body_names_dict[category.name] 
 		var hint = PROPERTY_HINT_ENUM
 		var hint_string = ",".join(body_name_list)
 		var type = TYPE_STRING
@@ -71,7 +77,7 @@ func _get_property_list():
 		elif category.optional:
 			hint_string = "-," + hint_string
 		properties.append({
-			"name": "display_" + category.name,
+			"name": DISPLAY_PREFIX + category.name,
 			"type": type,
 			"usage": property_usage, # See above assignment.
 			"hint": hint,
@@ -79,6 +85,7 @@ func _get_property_list():
 		})
 
 	return properties
+
 
 func _setup_default_display():
 	for category in category_list:
@@ -89,17 +96,48 @@ func _setup_default_display():
 		if category.multiple_selectable:
 			continue
 		if category.optional:
-			_set("display_" + category.name, "-")
+			_set(DISPLAY_PREFIX + category.name, "-")
 		else:
-			_set("display_" + category.name, category_body_names_dict[category.name][0])
+			_set(DISPLAY_PREFIX + category.name, category_body_names_dict[category.name][0])
 
+
+func _clear_avatar():
+	display_dict = {}
+	category_sprites_dict = {}
+	var childs = []
+	for child in $CanvasLayer.get_children():
+		childs.push_back(child)
+	for child in childs:
+		$CanvasLayer.remove_child(child)
+		child.queue_free()
+
+
+####################################################################################################
+################ Global Variable
+####################################################################################################
+
+const DISPLAY_PREFIX : String = "display_"
 
 var avatar_name : String
+
 var avatar_image_size : Vector2;
-var avatar_color_group_dict : Dictionary
-var avatar_category_dict : Dictionary
+
 var category_list : Array[AvatarCategory]
+
+# key : "display_" + category_name, value : body_name
+var display_dict : Dictionary
+
+# key : color_group_id, value : AvatarColorGroup
+var avatar_color_group_dict : Dictionary
+
+# key : category_id, value : category_value
+var avatar_category_dict : Dictionary
+
+# key : category.name, value : body_name_list
 var category_body_names_dict : Dictionary
+
+# key : category_name, value : category_id
+var category_name_to_id_dict : Dictionary
 
 # key : category_id,  value : { layer_id : AvatarPartLayer}
 var avatar_layer_dict : Dictionary
@@ -110,6 +148,13 @@ var avatar_body_part_dict : Dictionary
 # key : category_id,  value : { body_name : { layer_id : texture } }
 var avatar_texture_dict : Dictionary
 
+# key : category_name, value : Array[Sprite]
+var category_sprites_dict : Dictionary
+
+
+####################################################################################################
+################ Sprite and Texture
+####################################################################################################
 func _init_all_texture():
 	avatar_texture_dict = {}
 	for category in avatar_category_dict.values():
@@ -126,9 +171,10 @@ func _init_all_texture():
 				layer_dict[layer.id] = texture
 
 
-func _create_sprite(category_id, body_name):
+func _create_sprites(category_id, body_name) -> Array[Sprite2D]:
 	var category : AvatarCategory = avatar_category_dict[category_id]
 	var body : AvatarBodyPart = avatar_body_part_dict[category_id][body_name]
+	var sprites = []
 	for layer in body.layers:
 		var texture = avatar_texture_dict[category_id][body.name][layer.id]
 		var sprite = Sprite2D.new()
@@ -137,8 +183,52 @@ func _create_sprite(category_id, body_name):
 		sprite.offset = Vector2(texture.get_width()/2, texture.get_height()/2)
 		sprite.position = Vector2(50, 50)
 		print(layer.dir, "/", body.name, ".png")
-		$CanvasLayer.add_child(sprite)
+#		$CanvasLayer.add_child(sprite)
+		sprites.push_back(sprite)
+	return sprites
 
+
+func _create_sprite_by_name(category_name, body_name):
+	var category_id = category_name_to_id_dict[category_name]
+	var sprites = _create_sprites(category_id, body_name)
+	return sprites
+	
+
+func _remove_old_sprites(sprites : Array[Sprite2D]):
+	for sprite in sprites:
+		$CanvasLayer.remove_child(sprite)
+	
+func _display_property_sprites(property, value):
+	var category_name = property.slice(DISPLAY_PREFIX.length(), property.length())
+	if category_name not in category_sprites_dict:
+		category_sprites_dict[category_name] = []
+	_remove_old_sprites(category_sprites_dict[category_name])
+	category_sprites_dict[category_name] = []
+	
+	var sprites : Array = category_sprites_dict[category_name]
+	if value is int:
+		var body_name_list : Array = category_body_names_dict[category_name]
+		for i in range(body_name_list.size()):
+			if value >> i & 1 != 1:
+				continue
+			var body_name = body_name_list[i]
+			var new_sprites = _create_sprite_by_name(category_name, body_name)
+			for sprite in new_sprites:
+				sprites.push_back(sprite)
+	if value is String:
+		var body_parts = value.split(",", false)
+		for body_name in body_parts:
+			var new_sprites = _create_sprite_by_name(category_name, body_name)
+			for sprite in new_sprites:
+				sprites.push_back(sprite)
+	for sprite in sprites:
+		$CanvasLayer.add_child(sprite)
+		
+	
+
+####################################################################################################
+################ XML Parser
+####################################################################################################
 
 class AvatarPartLayer:
 	var dir : String
@@ -291,6 +381,7 @@ func _build_avatar_category_dict(node : Dictionary) -> Dictionary:
 	category_body_names_dict = {}
 	avatar_layer_dict = {}
 	avatar_body_part_dict = {}
+	category_name_to_id_dict = {}
 	for category_node in node["children"]:
 		var category_id = category_node["attributes"]["id"]
 		var multiple_selectable = category_node["attributes"]["multipleSelectable"]
@@ -320,6 +411,7 @@ func _build_avatar_category_dict(node : Dictionary) -> Dictionary:
 		body_name_list.sort()
 		category_body_names_dict[category.name] = body_name_list
 		category_list.push_back(category)
+		category_name_to_id_dict[category.name] = category.id
 	return dict
 
 
@@ -357,6 +449,9 @@ func _build_avatar_part_layer_dict(node : Dictionary) -> Dictionary:
 	return dict
 
 
+####################################################################################################
+################ Start
+####################################################################################################
 
 
 # Called when the node enters the scene tree for the first time.

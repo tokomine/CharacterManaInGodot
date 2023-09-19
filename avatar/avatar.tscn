@@ -7,5 +7,22 @@ position = Vector2(560, 328)
 script = ExtResource("1_oaqel")
 avatar_path = "res://avatar/「みゆ」サイズ小"
 display_avatar = true
+"display_【前髪】" = "01_ボブ"
+"display_【後ろ髪】" = "-"
+"display_【まゆげ】" = "-"
+"display_【目】" = "01_★温厚（デフォ）"
+"display_【口】" = "01_にっこり"
+"display_【表情】" = null
+"display_【服】" = "01_★裸（小）"
+"display_【アウター】" = "-"
+"display_【ズボン】" = "-"
+"display_【靴】" = "-"
+"display_【靴下】" = "-"
+"display_【帽子】" = "-"
+"display_【オプション】" = null
+"display_【耳】" = null
+"display_【感情】" = "-"
+"display_（肌の色）" = "基本"
+"display_（背景）" = "-"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

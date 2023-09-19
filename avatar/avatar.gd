@@ -37,6 +37,8 @@ func _set(property, value):
 	if display_dict == null:
 		display_dict = {}
 	display_dict[property] = value
+	if property.begins_with(DISPLAY_PREFIX):
+		_display_property_sprites(property, value)
 	return true
 
 
@@ -174,7 +176,7 @@ func _init_all_texture():
 func _create_sprites(category_id, body_name) -> Array[Sprite2D]:
 	var category : AvatarCategory = avatar_category_dict[category_id]
 	var body : AvatarBodyPart = avatar_body_part_dict[category_id][body_name]
-	var sprites = []
+	var sprites : Array[Sprite2D] = []
 	for layer in body.layers:
 		var texture = avatar_texture_dict[category_id][body.name][layer.id]
 		var sprite = Sprite2D.new()
@@ -197,32 +199,41 @@ func _create_sprite_by_name(category_name, body_name):
 func _remove_old_sprites(sprites : Array[Sprite2D]):
 	for sprite in sprites:
 		$CanvasLayer.remove_child(sprite)
-	
+		sprite.queue_free()
+
+
 func _display_property_sprites(property, value):
-	var category_name = property.slice(DISPLAY_PREFIX.length(), property.length())
+	var category_name = property.substr(DISPLAY_PREFIX.length(), property.length())
+	print("_display_property_sprites category name : ", category_name)
 	if category_name not in category_sprites_dict:
-		category_sprites_dict[category_name] = []
-	_remove_old_sprites(category_sprites_dict[category_name])
-	category_sprites_dict[category_name] = []
+		var temp_sprites : Array[Sprite2D] = []
+		category_sprites_dict[category_name] = temp_sprites
+	var old_sprites : Array[Sprite2D] = category_sprites_dict[category_name]
+	_remove_old_sprites(old_sprites)
 	
-	var sprites : Array = category_sprites_dict[category_name]
+	var sprites : Array[Sprite2D] = []
 	if value is int:
 		var body_name_list : Array = category_body_names_dict[category_name]
 		for i in range(body_name_list.size()):
 			if value >> i & 1 != 1:
 				continue
 			var body_name = body_name_list[i]
+			if body_name == "-":
+				continue
 			var new_sprites = _create_sprite_by_name(category_name, body_name)
 			for sprite in new_sprites:
 				sprites.push_back(sprite)
 	if value is String:
 		var body_parts = value.split(",", false)
 		for body_name in body_parts:
+			if body_name == "-":
+				continue
 			var new_sprites = _create_sprite_by_name(category_name, body_name)
 			for sprite in new_sprites:
 				sprites.push_back(sprite)
 	for sprite in sprites:
 		$CanvasLayer.add_child(sprite)
+	category_sprites_dict[category_name] = sprites
 		
 	
 
